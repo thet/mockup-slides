@@ -11,3 +11,6 @@ iframe {
      box-shadow: none;
      background: none;
 }
+
+.reveal h2 { margin-bottom: 1em; }
+.reveal h3 { margin-bottom: 1em; }

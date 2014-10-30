@@ -32,17 +32,6 @@
   </head>
 
   <body>
-    <!--
-        colors:
-        https://kuler.adobe.com/create/color-wheel/?base=2&rule=Analogous&selected=4&name=My%20Kuler%20Theme&mode=rgb&rgbvalues=0.7950980392156863,0.21951409859249027,0,0.5686743281526693,0.018820642827770902,0.8350980392156863,0,0.5137254901960784,0.7450980392156863,0.14597107605243181,0.8350980392156863,0.04175490196078435,0.7950980392156863,0.5971390297864673,0.03975490196078435&swatchOrder=0,1,2,3,4
-
-        0083BE
-        9105D5
-        CB3800
-        25D50B
-
-        CBBE00
-        -->
 
     <div class="reveal">
       <div class="slides">
@@ -53,7 +42,8 @@
           
           <p>
             <br/>
-            <a href="http://plone.org/"><img class="logo" src="img/plone-logo-128-w.png"/></a><br/>
+            <br/>
+            <br/>
             Plone Conference 2014, Bristol<br/>
             Authors: <a href="https://github.com/frapell">Franco Pellegrini</a> &amp; <a href="http://johannes.raggam.co.at">Johannes Raggam</a>
           </p>
@@ -70,6 +60,10 @@
               <li>Alt-Click - zoom.</li>
             </ul>
           </aside>
+        </section>
+
+        <section>
+            <a href="http://plone.github.io/mockup"><img class="logo" style="max-width:70%; max-height:70%" src="img/mockup-logo.jpg"/></a><br/>
         </section>
 
         <section data-background="#CBBE00">
@@ -123,22 +117,57 @@
         <section data-background="#0083BE">
 
           <section>
-            Using Moment.js
+            <h2>Example: moment.js pattern</h2>
 
-            <pre><span class="pat-moment">2014-10-30T15:10:00</span></pre>
+            <pre><code><span class="pat-moment">2014-10-30T15:10:00</span></code></pre>
             
-            <pre>October 30th 2014, 3:10:00 pm</pre>
+            <strong>October 30th 2014, 3:10:00 pm</strong>
             
           </section>
 
         </section>
 
         <section data-background="#CBBE00">
-          <h2>$ cat HISTORY.rst</h2>
-          <ul>
-            <li>Patternslib by Cornelis Kolbach in 2011</li>
-            <li>Mockup forked from Patternslib by Rok Garbas in <a href="https://github.com/plone/mockup/commit/bf35f27e02fa73c1091ea5aeb75b3700a67aa12c">late 2012</a></li>
-          </ul>
+
+          <section>
+            <h2>$ cat HISTORY.rst</h2>
+          </section> 
+
+          <section>
+            <h3>Patternslib</h3>
+              <ul>
+                <li>By Cornelis Kolbach, Wichert Akkerman et al in <a href="https://github.com/Patternslib/Patterns/commit/816e06b9944b6e94ef6e857c299ab24caa648300">Jul 2011</a></li>
+                <li>Conceptual parent of Mockup</li>
+                <li>Addresses same problems</li>
+                <li>Solves it the same way</li>
+                <li>... just differently <small>(implementation details)</small></li>
+              </ul>
+            </li>
+          </section> 
+
+          <section>
+            <h3>plone.app.widgets</h3>
+            <ul>
+              <li>plone.widgets and plone.app.widgets by Nathan Van Gheem in <a href="https://github.com/plone/plone.app.widgets/commit/3e6248172c44ee44c88a3f06bed0da3bf52c222b">Nov 2011</a></li>
+              <li>Attempt to bring more modern UI elements to Plone core</li>
+              <li>First versions not based on Mockup nor Patternslib</li>
+              <li>Moved to Pattern based structure in <a href="https://github.com/plone/plone.app.widgets/commit/ffb96e89430c25e64b0da3e249126445149dc1b4">Jan 2013</a></li>
+              <li>Based on Mockup since <a href="https://github.com/plone/plone.app.widgets/commit/8a4de5bb3ca759e088cdac4b105fc1014cef9c13" target="_blank">Jan 2013</a></li>
+            </ul>
+          </section> 
+
+          <section>
+            <h3>Mockup</h3>
+            <ul>
+              <li>Mockup forked from Patternslib by Rok Garbas in <a href="https://github.com/plone/mockup/commit/bf35f27e02fa73c1091ea5aeb75b3700a67aa12c">Dec 2012</a></li>
+              <li>Split up in Mockup and Mockup Core in <a href="https://github.com/plone/mockup-core/commit/a62af14c460f1ac8634cb7b6c8b8aa2103e7bbfd">Dec 2013</a></li>
+            </ul>            
+          </section>
+
+          <section>
+            <h3>Compare that to Angular </h3>
+            <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=de&q=angularjs&date=1/2011+47m&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script>
+          </section>
 
         </section>
 
