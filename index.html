@@ -39,7 +39,7 @@
         <section data-background="#0083BE">
           <h1>Ready, set... Mockup!</h1>
           <h3>About Plone's new Frontend library.</h3>
-          
+
           <p>
             <br/>
             <br/>
@@ -47,13 +47,13 @@
             Plone Conference 2014, Bristol<br/>
             Authors: <a href="https://github.com/frapell">Franco Pellegrini</a> &amp; <a href="http://johannes.raggam.co.at">Johannes Raggam</a>
           </p>
-          
+
           <p>
             <br/>
             <br/>
             <small><a href="?print-pdf">Printview for PDF Export</a></small>
           </p>
-         
+
           <aside class="notes">
             <ul>
               <li>b - 'paused' mode.</li>
@@ -68,7 +68,7 @@
 
         <section data-background="#CBBE00">
           <section>
-            <h2>$ whoami</h2>
+            <h1>$ who</h1>
             <h3>Franco Pellegrini</h3>
             <h3>Johannes Raggam</h3>
           </section>
@@ -105,7 +105,7 @@
               standards for reproducable and stable behavior.
             </blockquote>
           </section>
-          
+
           <section>
             <blockquote>
               Mockup is also the new frontend library for JavaScript development,
@@ -113,16 +113,20 @@
             </blockquote>
           </section>
         </section>
-        
+
         <section data-background="#0083BE">
+
+          <section>
+            <h1>Example</h1>
+          </section>
 
           <section>
             <h2>Example: moment.js pattern</h2>
 
             <pre><code><span class="pat-moment">2014-10-30T15:10:00</span></code></pre>
-            
+
             <strong>October 30th 2014, 3:10:00 pm</strong>
-            
+
           </section>
 
         </section>
@@ -130,11 +134,11 @@
         <section data-background="#CBBE00">
 
           <section>
-            <h2>$ cat HISTORY.rst</h2>
-          </section> 
+            <h1>$ cat HISTORY.rst</h1>
+          </section>
 
           <section>
-            <h3>Patternslib</h3>
+            <h2>Patternslib</h2>
               <ul>
                 <li>By Cornelis Kolbach, Wichert Akkerman et al in <a href="https://github.com/Patternslib/Patterns/commit/816e06b9944b6e94ef6e857c299ab24caa648300">Jul 2011</a></li>
                 <li>Conceptual parent of Mockup</li>
@@ -143,10 +147,10 @@
                 <li>... just differently <small>(implementation details)</small></li>
               </ul>
             </li>
-          </section> 
+          </section>
 
           <section>
-            <h3>plone.app.widgets</h3>
+            <h2>plone.app.widgets</h2>
             <ul>
               <li>plone.widgets and plone.app.widgets by Nathan Van Gheem in <a href="https://github.com/plone/plone.app.widgets/commit/3e6248172c44ee44c88a3f06bed0da3bf52c222b">Nov 2011</a></li>
               <li>Attempt to bring more modern UI elements to Plone core</li>
@@ -154,14 +158,14 @@
               <li>Moved to Pattern based structure in <a href="https://github.com/plone/plone.app.widgets/commit/ffb96e89430c25e64b0da3e249126445149dc1b4">Jan 2013</a></li>
               <li>Based on Mockup since <a href="https://github.com/plone/plone.app.widgets/commit/8a4de5bb3ca759e088cdac4b105fc1014cef9c13" target="_blank">Jan 2013</a></li>
             </ul>
-          </section> 
+          </section>
 
           <section>
-            <h3>Mockup</h3>
+            <h2>Mockup</h2>
             <ul>
               <li>Mockup forked from Patternslib by Rok Garbas in <a href="https://github.com/plone/mockup/commit/bf35f27e02fa73c1091ea5aeb75b3700a67aa12c">Dec 2012</a></li>
               <li>Split up in Mockup and Mockup Core in <a href="https://github.com/plone/mockup-core/commit/a62af14c460f1ac8634cb7b6c8b8aa2103e7bbfd">Dec 2013</a></li>
-            </ul>            
+            </ul>
           </section>
 
         </section>
@@ -195,6 +199,133 @@
                 <li>CHAI - Assertion library</li>
             </ul>
           </section>
+
+        </section>
+
+
+        <section data-background="#0083BE">
+
+          <section>
+            <h1>
+            example / 2
+            </h1>
+          </section>
+
+          <section>
+            <h2>Example: moment.js pattern</h2>
+
+            <pre><code><span class="pat-moment">2014-10-30T15:10:00</span></code></pre>
+
+            <strong>October 30th 2014, 3:10:00 pm</strong>
+
+          </section>
+
+          <section>
+            <h2>Pattern Implementation / 1</h2>
+
+            <pre><code>
+define(['jquery', 'mockup-patterns-base', 'moment'],
+function($, Base, moment) {
+  'use strict';
+  var Moment = Base.extend({
+    name: 'moment',
+    defaults: {format: 'MMMM Do YYYY, h:mm:ss a'},
+    init: function () {
+      var self = this,
+          $el = self.$el,
+          format = self.options.format;
+      // TODO: do something
+    }
+  });
+  return Moment;
+});
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Pattern Implementation / 2</h2>
+
+            <pre><code>
+define([
+  'jquery',
+  'mockup-patterns-base',
+  'moment'
+], function($, Base, moment) {
+  'use strict';
+
+  var Moment = Base.extend({
+    name: 'moment',
+    defaults: {
+      // selector of elements to format dates for
+      selector: null,
+      // also available options are relative, calendar
+      format: 'MMMM Do YYYY, h:mm:ss a'
+    },
+    convert: function($el) {
+      var self = this;
+      var date = $el.attr('data-date');
+      if (!date) {
+        date = $.trim($el.html());
+      }
+      date = moment(date);
+      if (!date.isValid()) {
+        return;
+      }
+      if (self.options.format === 'relative') {
+        date = date.fromNow();
+      }else if (self.options.format === 'calendar') {
+        date = date.calendar();
+      } else {
+        date = date.format(self.options.format);
+      }
+      if (date) {
+        $el.html(date);
+      }
+    },
+    init: function() {
+      var self = this;
+      if (self.options.selector) {
+        self.$el.find(self.options.selector).each(function() {
+          self.convert($(this));
+        });
+      } else {
+        self.convert(self.$el);
+      }
+    }
+  });
+
+  return Moment;
+
+});
+            </code></pre>
+
+          </section>
+
+          <section>
+            <h2>Testing a Pattern</h2>
+
+            <pre><code>
+define(['expect', 'jquery', 'mockup-registry', 'mockup-patterns-moment'],
+function(expect, $, registry, Moment) {
+  'use strict';
+  window.mocha.setup('bdd');
+  $.fx.off = true;
+  describe('Moment', function () {
+    it('test parse relative', function() {
+      var date = new Date();
+      date.setMinutes(date.getMinutes() + 2);
+      var $el = $('<div class="pat-moment" data-pat-moment="format:relative">' + date + '</div>');
+      registry.scan($el);
+      expect($el.html()).to.equal('in 2 minutes');
+    });
+  });
+});
+
+            </code></pre>
+
+          </section>
+
+
 
         </section>
 
