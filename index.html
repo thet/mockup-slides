@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Ready, set... Mockup!</title>
+
+    <meta name="description" content="About Plone's new Frontend library.">
+    <meta name="author" content="Franco Pellegrini, Johannes Raggam">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="bower_components/reveal.js/css/theme/default.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'bower_components/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <section data-background="#0083BE">
+          <h1>Ready, set... Mockup!</h1>
+          <h3>About Plone's new Frontend library.</h3>
+
+          <p>
+            <br/>
+            <br/>
+            <br/>
+            Plone Conference 2014, Bristol<br/>
+            Authors: <a href="https://github.com/frapell">Franco Pellegrini</a> &amp; <a href="http://johannes.raggam.co.at">Johannes Raggam</a>
+          </p>
+
+          <p>
+            <br/>
+            <br/>
+            <small><a href="?print-pdf">Printview for PDF Export</a></small>
+          </p>
+
+          <aside class="notes">
+            <ul>
+              <li>b - 'paused' mode.</li>
+              <li>Alt-Click - zoom.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+            <a href="http://plone.github.io/mockup"><img class="logo" style="max-width:70%; max-height:70%" src="img/mockup-logo.jpg"/></a><br/>
+        </section>
+
+        <section data-background="#CBBE00">
+          <section>
+            <h1>$ who</h1>
+            <h3>Franco Pellegrini</h3>
+            <h3>Johannes Raggam</h3>
+          </section>
+
+          <section>
+            <h3>Franco Pellegrini</h3>
+
+            <p>Franco Pellegrini is a software developer from Cordoba,
+            Argentina. He started developing Plone in 2005 in a small software
+            company, and as an independent contractor since 2011. He believes
+            in free software philosophy, and so, he has been a Plone core
+            developer since 2010 and Framework Team member since 2012.</p>
+          </section>
+
+          <section>
+            <h3>Johannes Raggam</h3>
+
+            <p>Johannes Raggam from Graz/Austria works most of the time with a
+            technology stack based around Python, Plone, Pyramid and
+            Javascript.  As an active Open Source / Free Software developer he
+            believes in the power of collaborative work. He is BlueDynamics
+            Alliance Partner and Plone Core Contributor since 2009 and member
+            of the Plone Framework Team since 2012.</p>
+          </section>
+        </section>
+
+
+        <section data-background="#0BD52D">
+          <section>
+            <h2>Mockup?</h2>
+            <blockquote>
+              Mockup is a framework for adding JavaScript functionality from
+              other libraries to DOM Elements of a site, while enforcing best
+              standards for reproducible and stable behavior.
+            </blockquote>
+          </section>
+
+          <section>
+            <blockquote>
+              Mockup is also the new frontend library for JavaScript development,
+              which is going to be used in plone.app.widgets and Plone 5.
+            </blockquote>
+          </section>
+        </section>
+
+        <section data-background="#0083BE">
+
+          <section>
+            <h1>Example</h1>
+          </section>
+
+          <section>
+            <h2>Example: moment.js pattern</h2>
+
+            <pre><code><span class="pat-moment">2014-10-30T15:10:00</span></code></pre>
+
+            <strong>October 30th 2014, 3:10:00 pm</strong>
+
+          </section>
+
+        </section>
+
+        <section data-background="#CBBE00">
+
+          <section>
+            <h1>$ cat HISTORY.rst</h1>
+          </section>
+
+          <section>
+            <h2>CURRENT STATUS</h2>
+
+            <ul>
+                <li>Developing as if it were 2004</li>
+                <li>41 Javascript files registered on a fresh Plone 4.3</li>
+                <li>7 Disabled</li>
+                <li>New releases of Javascript libs require new releases of packages</li>
+                <li>You cannot do Javascript in Plone unless you are a Plone developer</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>Resource Registry</h2>
+            <img class="logo" style="max-width:100%; max-height:70%" src="img/rr-history.png"/>
+          </section>
+
+          <section>
+            <h2>Errors</h2>
+            <img class="logo" style="max-width:100%; max-height:100%" src="img/rr-errors.png"/>
+          </section>
+
+          <section>
+            <h1>No tests</h1>
+          </section>
+
+          <section>
+            <img class="logo" style="width:100%; height:100%" src="img/fix-js.jpg"/>
+          </section>
+
+          <section>
+            <h2>Patternslib</h2>
+              <ul>
+                <li>By Cornelis Kolbach, Wichert Akkerman et al in <a href="https://github.com/Patternslib/Patterns/commit/816e06b9944b6e94ef6e857c299ab24caa648300">Jul 2011</a></li>
+                <li>Conceptual parent of Mockup</li>
+                <li>Addresses same problems</li>
+                <li>Solves it the same way</li>
+                <li>... just differently <small>(implementation details)</small></li>
+              </ul>
+            </li>
+          </section>
+
+          <section>
+            <h2>plone.app.widgets</h2>
+            <ul>
+              <li>plone.widgets and plone.app.widgets by Nathan Van Gheem in <a href="https://github.com/plone/plone.app.widgets/commit/3e6248172c44ee44c88a3f06bed0da3bf52c222b">Nov 2011</a></li>
+              <li>Attempt to bring more modern UI elements to Plone core</li>
+              <li>First versions not based on Mockup nor Patternslib</li>
+              <li>Moved to Pattern based structure in <a href="https://github.com/plone/plone.app.widgets/commit/ffb96e89430c25e64b0da3e249126445149dc1b4">Jan 2013</a></li>
+              <li>Based on Mockup since <a href="https://github.com/plone/plone.app.widgets/commit/8a4de5bb3ca759e088cdac4b105fc1014cef9c13" target="_blank">Jan 2013</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Mockup</h2>
+            <ul>
+              <li>Mockup forked from Patternslib by Rok Garbas in <a href="https://github.com/plone/mockup/commit/bf35f27e02fa73c1091ea5aeb75b3700a67aa12c">Dec 2012</a></li>
+              <li>Split up in Mockup and Mockup Core in <a href="https://github.com/plone/mockup-core/commit/a62af14c460f1ac8634cb7b6c8b8aa2103e7bbfd">Dec 2013</a></li>
+            </ul>
+          </section>
+
+        </section>
+
+
+        <section data-background="#0BD52D">
+          <section>
+            <h1>Toolset</h1>
+          </section>
+
+          <section>
+            <h2>Build environment</h2>
+            <ul>
+                <li><strong>YO</strong> - Used to generate a basic skeleton</li>
+                <li><strong>GRUNT</strong> - Used to build, preview and test, by defining tasks</li>
+                <li><strong>NPM</strong> - Node's package manager</li>
+                <li><strong>BOWER</strong> - Package manager for frontend libs</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Frontend toolset</h2>
+            <ul>
+                <li><strong>RequireJS</strong> - Module definition and dependency management</li>
+                <li>and any other JS library we want to use in Plone</li>
+            </ul>
+
+            <br/>
+            <br/>
+            <blockquote>
+              See: <a href="http://localhost:8000">plone.github.io/mockup</a>
+            </blockquote>
+          </section>
+
+          <section>
+            <h2>Testing</h2>
+            <ul>
+                <li>KARMA - Test runner plugin</li>
+                <li>MOCHA - Test framework</li>
+                <li>Expect JS / CHAI - Assertion library</li>
+            </ul>
+          </section>
+
+        </section>
+
+
+        <section data-background="#0083BE">
+
+          <section>
+            <h1>example / 2</h1>
+          </section>
+
+          <section>
+            <h2>Example: moment.js pattern</h2>
+
+            <pre><code><span class="pat-moment">2014-10-30T15:10:00</span></code></pre>
+
+            <strong>October 30th 2014, 3:10:00 pm</strong>
+
+          </section>
+
+          <section>
+            <h2>Pattern Implementation / 1</h2>
+
+            <pre><code>
+define(['jquery', 'mockup-patterns-base', 'moment'],
+function($, Base, moment) {
+  'use strict';
+  var Moment = Base.extend({
+    name: 'moment',
+    defaults: {format: 'MMMM Do YYYY, h:mm:ss a'},
+    init: function () {
+      var self = this,
+          $el = self.$el,
+          format = self.options.format;
+      // TODO: do something
+    }
+  });
+  return Moment;
+});
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Pattern Implementation / 2</h2>
+
+            <pre><code>
+define([
+  'jquery',
+  'mockup-patterns-base',
+  'moment'
+], function($, Base, moment) {
+  'use strict';
+
+  var Moment = Base.extend({
+    name: 'moment',
+    defaults: {
+      // selector of elements to format dates for
+      selector: null,
+      // also available options are relative, calendar
+      format: 'MMMM Do YYYY, h:mm:ss a'
+    },
+    convert: function($el) {
+      var self = this;
+      var date = $el.attr('data-date');
+      if (!date) {
+        date = $.trim($el.html());
+      }
+      date = moment(date);
+      if (!date.isValid()) {
+        return;
+      }
+      if (self.options.format === 'relative') {
+        date = date.fromNow();
+      }else if (self.options.format === 'calendar') {
+        date = date.calendar();
+      } else {
+        date = date.format(self.options.format);
+      }
+      if (date) {
+        $el.html(date);
+      }
+    },
+    init: function() {
+      var self = this;
+      if (self.options.selector) {
+        self.$el.find(self.options.selector).each(function() {
+          self.convert($(this));
+        });
+      } else {
+        self.convert(self.$el);
+      }
+    }
+  });
+
+  return Moment;
+
+});
+            </code></pre>
+
+          </section>
+
+          <section>
+            <h2>Testing a Pattern</h2>
+
+            <pre><code>
+define(['expect', 'jquery', 'mockup-registry', 'mockup-patterns-moment'],
+function(expect, $, registry, Moment) {
+  'use strict';
+  window.mocha.setup('bdd');
+  $.fx.off = true;
+  describe('Moment', function () {
+    it('test parse relative', function() {
+      var date = new Date();
+      date.setMinutes(date.getMinutes() + 2);
+      var $el = $('<div class="pat-moment" data-pat-moment="format:relative">' + date + '</div>');
+      registry.scan($el);
+      expect($el.html()).to.equal('in 2 minutes');
+    });
+  });
+});
+
+            </code></pre>
+
+          </section>
+
+        </section>
+
+
+        <section data-background="#0083BE">
+
+          <section>
+            <h2>GENERATOR-PLONEMOCKUP</h2>
+
+            <blockquote>
+              Uses YEOMAN
+            </blockquote>
+            <br/>
+            <pre><code>
+                $ npm install -g generator-plonemockup
+                $ yo plonemockup
+            </code></pre>
+
+          </section>
+
+          <section>
+            <h3>GENERATOR-PLONEMOCKUP</h3>
+
+            <blockquote>
+              After answering a couple of questions
+            </blockquote>
+
+            <pre><code>
+            ├── bower.json
+            ├── config.js
+            ├── dev
+            │   ├── dev.html
+            │   └── dev.js
+            ├── Gruntfile.js
+            ├── js
+            │   ├── bundles
+            │   │   └── myproject.js
+            │   └── patterns
+            │       └── mypattern.js
+            ├── less
+            │   └── myproject.less
+            ├── package.json
+            ├── README.md
+            └── tests
+                ├── config.js
+                └── pattern-mypattern-test.js
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>GENERATOR-PLONEMOCKUP</h3>
+
+            <pre><code>
+            $ grunt
+            </code></pre>
+
+            <ul>
+                <li>New <i>build</i> directory. </li>
+                <li>Everything you need to include in your site is in there</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>TRAINING</h2>
+
+            <blockquote>
+              http://mockup-training.readthedocs.org/
+            </blockquote>
+
+          </section>
+
+        </section>
+
+
+        <section data-background="#0BD52D">
+
+          <section>
+            <h1>Mockup Alternatives</h1>
+          </section>
+
+          <section>
+            <h2>Patternslib</h2>
+            <ul>
+              <li>Similar in concept like Mockup</li>
+              <li>Mockup got inspired by Patternslib</li>
+              <li>Mockup registry nearly the same as the one from Patternslib</li>
+              <li>Combined effort would be great, but ...</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Web Components</h2>
+            <ul>
+              <li>W3C Draft</li>
+              <li>Experimental Projects: <a href="https://www.polymer-project.org/">Google Polymer</a>, <a href="http://www.x-tags.org/">Mozilla X-Tags</a></li>
+              <li>Limited Browser compatibility: X-Tags better than Polymer</li>
+              <li><a href="http://www.w3.org/standards/techs/components#w3c_all">W3C Current status</a></li>
+              <ul>
+                <li>Completed: HTML Templates</li>
+                <li>Draft: Shadow DOM, HTML Imports</li>
+              </ul>
+            </ul>
+            <br/>
+            <br/>
+            <blockquote>
+              Once the Standard is completed and implemented by all major Browsers, we should switch Mockup's implementation to it.
+            </blockquote>
+          </section>
+
+          <section>
+            <h2>Angular JS Directives</h2>
+            <ul>
+              <li>Directives similar to Mockup</li>
+              <li>Angulas is a full stack JS Framework</li>
+              <li>Angular will switch itself to Web Components once it's ready</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Our opinion</h2>
+            <blockquote>Great framework, big improvment, nice workflow. But uncertainty about future.</blockquote>
+          </section>
+
+          <section>
+            <h1>Your opinion?</h1>
+          </section>
+
+        </section>
+
+
+        <section data-background="#0083BE">
+          <h1>That's all, folks!</h1>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
+
