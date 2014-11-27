@@ -4,13 +4,65 @@ iframe {
     border:1px solid #CCC;
     border-width:1px 1px 0;
     margin-bottom:5px;
+    width: 95%;
+    height: 95%;
 }
 
-.reveal section img.logo {
-     border: none;
-     box-shadow: none;
-     background: none;
+.slides section {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.reveal h2 { margin-bottom: 1em; }
-.reveal h3 { margin-bottom: 1em; }
+.reveal .footer {
+    position: absolute;
+    bottom: 1em;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.bglogo {
+    background-image:url('img/mockup-logo-trans.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+}
+.bglogo h1 span,
+.bglogo h2 span,
+.bglogo h3 span,
+.bglogo p span,
+.bglogo li span,
+.bglogo div span {
+    background: rgba(0,0,0,0.6);
+    padding: 0 0.2em;
+}
+
+.reveal section > h2 {
+    position: absolute;
+    top: 1em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 { margin-bottom: 0.5em; text-transform: none; text-shadow: none; }
+
+.reveal li { margin-bottom: 0.5em; }
+
+.reveal a { background: rgba(255, 255, 255, 0.5); color: black !important; padding: 0 0.2em; margin: 0 0.2em; }
+.reveal a:hover { color: blue !important; }
+
+.reveal .tty { font-family: "Ubuntu Mono", monospace; text-transform: none; letter-spacing: -0.05em; }
+.reveal pre { display: inline; }
+.reveal pre code { display: inline-block; }
+
+.reveal .supercenter {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
